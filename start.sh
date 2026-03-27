@@ -46,7 +46,7 @@ fi
 
 # ── Step 3: Install Python dependencies ────────────────────
 echo "[2/4] Installing dependencies..."
-pip install -r requirements.txt -q
+python -m pip install -r requirements.txt -q
 
 # ── Step 4: Start the MCP server ───────────────────────────
 echo "[3/4] Killing any existing MCP server process..."
