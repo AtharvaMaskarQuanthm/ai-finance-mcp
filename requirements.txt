@@ -1,8 +1,7 @@
 # MCP server dependencies
 # Install with: pip install -r requirements.txt
 
-fastmcp>=2.0.0
-mcp>=1.0.0
+mcp==1.26.0
 uvicorn>=0.20.0
 starlette>=0.27.0
 sse-starlette>=1.6.0
