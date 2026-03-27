@@ -12,7 +12,7 @@
 
 set -e
 
-REPO_URL="https://github.com/YOUR_USERNAME/AI-Finance.git"   # <-- update this
+REPO_URL="https://github.com/AtharvaMaskarQuanthm/ai-finance-mcp.git"
 WORKSPACE="/workspace"
 APP_DIR="$WORKSPACE/AI-Finance"
 LOG_FILE="$WORKSPACE/mcp_server.log"
