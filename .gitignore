@@ -1,0 +1,69 @@
+# ============================================================
+# Root .gitignore — AI-Finance monorepo
+# ============================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+*-venv/
+venv/
+.venv/
+
+# Databases (local data — in Turso for prod)
+data/
+*/data/
+
+# Environment / secrets
+.env
+*/.env
+**/.env
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs / temp
+*.log
+*.tmp
+*/logs/
+
+# Pipeline source code (runs locally only — not needed on RunPod)
+screener-module/
+news-module/
+technical-module/
+forensic-module/
+concall-module/
+mf-analysis/
+
+# One-time / dev scripts (not needed on RunPod)
+migrate_to_turso.py
+verify_migration.py
+patch_memories_table.py
+run_all.py
+identity.py
+
+# Dev / test files
+tests/
+check_concall.py
+test_concall_query.py
+TEST_REPORT.md
+TODOS.md
+CLAUDE.md
+
+# Windows / local tooling
+cloudflared.exe
+start_mcp.bat
+
+# Claude Code local settings
+.claude/
+
+# Jupyter
+*.ipynb
+.ipynb_checkpoints/
