@@ -46,7 +46,15 @@ fi
 
 # ── Step 3: Install Python dependencies ────────────────────
 echo "[2/4] Installing dependencies..."
-python -m pip install -r requirements.txt -q
+python -m pip install -r requirements.txt
+
+echo "  Verifying mcp import..."
+python -c "from mcp.server.fastmcp import FastMCP; print('  mcp OK')" || {
+  echo "ERROR: mcp import failed. Python: $(which python) $(python --version)"
+  echo "  Installed packages:"
+  python -m pip list | grep -i mcp
+  exit 1
+}
 
 # ── Step 4: Start the MCP server ───────────────────────────
 echo "[3/4] Killing any existing MCP server process..."
