@@ -46,13 +46,13 @@ fi
 
 # ── Step 3: Install Python dependencies ────────────────────
 echo "[2/4] Installing dependencies..."
-python -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 
 echo "  Verifying mcp import..."
-python -c "from mcp.server.fastmcp import FastMCP; print('  mcp OK')" || {
-  echo "ERROR: mcp import failed. Python: $(which python) $(python --version)"
+python3 -c "from mcp.server.fastmcp import FastMCP; print('  mcp OK')" || {
+  echo "ERROR: mcp import failed. Python: $(which python3) $(python3 --version)"
   echo "  Installed packages:"
-  python -m pip list | grep -i mcp
+  python3 -m pip list | grep -i mcp
   exit 1
 }
 
@@ -62,7 +62,7 @@ pkill -f "mcp_server.py" 2>/dev/null || true
 sleep 1
 
 echo "[4/4] Starting MCP server on port $PORT..."
-nohup python mcp_server.py --transport sse --port $PORT \
+nohup python3 mcp_server.py --transport sse --port $PORT \
   > "$LOG_FILE" 2>&1 &
 
 MCP_PID=$!
